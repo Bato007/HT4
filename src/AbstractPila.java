@@ -10,11 +10,11 @@ public class AbstractPila<E> implements Pila<E>{
 
     @Override
     public void add(E value) {
-
+        add(value);
     }
 
     @Override
     public E remove() {
-        return null;
+        return remove();
     }
 }

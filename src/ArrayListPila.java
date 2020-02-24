@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * @author Orlando
  * @author Brandon Hernández 19376
@@ -6,5 +8,8 @@
  *
  *
  */
-public class ArrayListPila<E> {
+public class ArrayListPila<E> extends AbstractPila<E> implements Pila<E> {
+
+    protected ArrayList<E> pila = new ArrayList<E>();
+
 }
