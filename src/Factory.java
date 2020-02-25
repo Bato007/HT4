@@ -20,7 +20,14 @@ public class Factory {
 
             //case "33":
               //  break;
-
+            case "4":
+            	return new ListaCircular <Integer>();
+            case "5":
+            	return new ListaDoble <Integer>();
+            case "6":
+            	return new ListaSimple <Integer>();
+            	
+            	
             default:
                 return new ArrayListPila<Integer>();
         }

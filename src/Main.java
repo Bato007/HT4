@@ -12,17 +12,32 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args){
     	Factory factory = new Factory();
+    	String tipoL;
     	@SuppressWarnings("resource")
 		Scanner teclado = new Scanner (System.in);
-    	System.out.println("Introduzca que tipo de lista desea usar (1. ArrayList, 2. Vector)");
+    	System.out.println("Introduzca que tipo de pila desea usar (1. ArrayList, 2. Vector, 3. Lista)");
     	String tipo = teclado.nextLine();
+    	if (tipo.contentEquals("3")) {
+    		System.out.println("Introduzca que tipo de lista desea utilizar: ");
+    		System.out.println("1.Lista Circular, 2.Lista Doble, 3.Lista Simple");
+    		tipoL = teclado.nextLine();
+    		if (tipoL.contentEquals("1")) {
+    			tipo = "4";
+    		}
+    		if (tipoL.contentEquals("2")) {
+    			tipo = "5";
+    		}
+    		if (tipoL.contentEquals("3")) {
+    			tipo = "6";
+    		}
+    	}
     	Pila<Integer> pila = factory.getFactory(tipo);
     	CalculadoraPostFix cal = new CalculadoraPostFix();
     	//Solo para verificar que si se cree correctamente el tipo de pila
     	if(pila instanceof ArrayListPila){
-			System.out.println("Si es un arraylist");
+			System.out.println("Si funciona");
 		}
-    	  File archivo = null;
+    	 /* File archivo = null;
 	      FileReader fr = null;
 	      BufferedReader br = null;
 	      String linea = null;
@@ -109,7 +124,7 @@ public class Main {
 	    	  
 	      }catch (Exception e) {
 	    	  System.out.println ("El documento posee una operación incorrecta");
-	      }
+	      }*/
 
 
 
