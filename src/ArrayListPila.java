@@ -11,5 +11,21 @@ import java.util.ArrayList;
 public class ArrayListPila<E> extends AbstractPila<E> implements Pila<E> {
 
     protected ArrayList<E> pila = new ArrayList<E>();
+    /**
+	* Agrega un dato a la pila sin importar cuantos datos hay
+	* @post se le agrega un elemento a la pila
+	*/
+    public void add (E value) {
+    	pila.add(value);
+    }
+    /**
+	* Elimina un elemento de la pila
+	* @pre hay por lo menos un elemento en la pila
+	* @post elimina el ultimo elemento de la pila
+	* @return el elemento eliminado de la pila
+	*/
+    public E remove () {
+    	return pila.remove(pila.size()-1);
+    }
 
 }

@@ -6,7 +6,7 @@
  *
  * Implementación de una pila
  */
-public class AbstractPila<E> implements Pila<E>{
+public abstract class AbstractPila<E> implements Pila<E>{
 
     @Override
     public void add(E value) {
