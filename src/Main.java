@@ -11,13 +11,13 @@ import java.util.Scanner;
  **/
 public class Main {
     public static void main(String[] args){
-    	Factory factory = new Factory();
+    	PilaFactory<Integer> pilaFactory = new PilaFactory<Integer>();
     	@SuppressWarnings("resource")
 		Scanner teclado = new Scanner (System.in);
     	System.out.println("Introduzca que tipo de lista desea usar (1. ArrayList, 2. Vector)");
     	String tipo = teclado.nextLine();
-    	Pila<Integer> pila = factory.getFactory(tipo);
-    	CalculadoraPostFix cal = new CalculadoraPostFix();
+    	Pila<Integer> pila = pilaFactory.getFactory(tipo);
+    	Calculadora cal = Singleton.getSingle();
     	//Solo para verificar que si se cree correctamente el tipo de pila
     	if(pila instanceof ArrayListPila){
 			System.out.println("Si es un arraylist");
@@ -46,8 +46,6 @@ public class Main {
 	         // Lectura del fichero
 	         while((linea=br.readLine())!=null)
 	        	contenido = linea.replace(" ", "");
-	            
-
 
 	      }
 	      catch(Exception e){
@@ -108,7 +106,7 @@ public class Main {
 		    }
 	    	  
 	      }catch (Exception e) {
-	    	  System.out.println ("El documento posee una operación incorrecta");
+	    	  System.out.println ("El documento posee una operacion incorrecta");
 	      }
 
 
