@@ -1,7 +1,6 @@
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -15,7 +14,7 @@ public class Main {
     	Factory factory = new Factory();
     	@SuppressWarnings("resource")
 		Scanner teclado = new Scanner (System.in);
-    	System.out.println("Introduzca que tipo de lista desea usar (1. ArrayLisy, 2. Vector)");
+    	System.out.println("Introduzca que tipo de lista desea usar (1. ArrayList, 2. Vector)");
     	String tipo = teclado.nextLine();
     	Pila<Integer> pila = factory.getFactory(tipo);
     	CalculadoraPostFix cal = new CalculadoraPostFix();
