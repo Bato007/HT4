@@ -8,6 +8,9 @@ import java.util.Scanner;
  * @author Brandon Hernández 19376
  * @version 23/02/2020
  * @since 23/02/2020
+ *
+ * Se encarga de correr el programa
+ * Link GitHub: https://github.com/Bato007/HT4
  **/
 public class Main {
     public static void main(String[] args){
