@@ -23,4 +23,5 @@ public interface Pila<E> {
      */
     public E remove();
 
+    public E peek();
 }

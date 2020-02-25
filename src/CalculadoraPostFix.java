@@ -48,7 +48,7 @@ public class CalculadoraPostFix implements Calculadora{
      * @param numero2 es el segundo número es el dividendo
      * @return devuelve la division de los dos números
      */
-    public int divir(int numero1, int numero2){
+    public int dividir(int numero1, int numero2){
         try{
             return numero1/numero2;
         }catch(ArithmeticException e){

@@ -25,5 +25,9 @@ public class VectorPila<E> extends AbstractPila<E> implements Pila<E> {
     public E remove () {
     	return pila.remove(pila.size()-1);
     }
+    
+    public E peek(){
+		return pila.get(pila.size() - 1);
+	}
 
 }

@@ -18,4 +18,10 @@ public class ListaDoble<E> extends AbstractList<E>{
 		return null;
 	}
 
+	@Override
+	public E peek() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
