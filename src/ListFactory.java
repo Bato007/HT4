@@ -8,7 +8,11 @@
  **/
 public class ListFactory<E> {
 
-
+    /**
+     * Se encarga de mandar una instancia de una lista que a su vez es pila
+     * @param instance es la instancia que desea el usuario
+     * @return la instancia de una pila
+     */
     public Pila<E> getFactory(String instance){
         switch (instance){
             case "11":
