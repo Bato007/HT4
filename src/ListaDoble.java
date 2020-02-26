@@ -1,3 +1,5 @@
+import java.time.temporal.TemporalAccessor;
+
 /**
  * @author Orlando Cabrera 19943
  * @author Brandon Hernández 19376
@@ -6,12 +8,7 @@
  *
  * Encargado de realizar las operaciones con los nodos
  *
- * Extraido de: https://instructure-uploads.s3.us-east-1.amazonaws.com/account_111400000000000001/
- * attachments/10546/DoubleLinkedList.java?response-content-disposition=inline%3B%20filename%3D%22
- * DoubleLinkedList.java%22%3B%20filename%2A%3DUTF-8%27%27DoubleLinkedList.java&X-Amz-Algorithm=AWS4
- * -HMAC-SHA256&X-Amz-Credential=AKIAJDW777BLV26JM2MQ%2F20200225%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-
- * Date=20200225T231250Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=8faccbfe004e4747e
- * 1d105389f6477160a7a0c8779bee2db9726de94c1b00945
+ * Extraido de: https://www.youtube.com/watch?v=8oCjWIJJI9c&t=419s
  **/
 public class ListaDoble<E> extends AbstractList<E>{
 
@@ -19,13 +16,14 @@ public class ListaDoble<E> extends AbstractList<E>{
 	protected DobleNode<E> head, tail;
 
 	/**
-	 * @pre
+	 * Se encarga de crear un nueva lista doble
+	 * @pre no hay objeto
+	 * @pos hay un nuevo objeto tipo lista doble
 	 */
 	public ListaDoble(){
 		head = tail = null;
 		count = 0;
 	}
-
 
 	/**
 	 * Se encarga de agregar un dato al final de la lista
@@ -34,10 +32,11 @@ public class ListaDoble<E> extends AbstractList<E>{
 	 */
 	@Override
 	public void add(E value) {
-		tail = new DobleNode<E>(value, null, null);
-
-		if (head == null){
-			head = tail;
+		if(count != 0){
+			tail = new DobleNode<E>(value, null, tail);
+			tail.previousElement.nextElement = tail;
+		}else {
+			head = tail = new DobleNode<E>(value);
 		}
 	}
 
@@ -49,15 +48,15 @@ public class ListaDoble<E> extends AbstractList<E>{
 	 */
 	@Override
 	public E remove() {
-		E temp = tail.data;
-		if (head == tail){
+		DobleNode<E> temp = tail;
+
+		if(head == tail){
 			head = tail = null;
 		}else {
-			head = head.nextElement;
-			head.nextElement = null;
+			tail = tail.previousElement;
+			tail.nextElement = null;
 		}
-
-		return temp;
+		return temp.data;
 	}
 
 	/**
