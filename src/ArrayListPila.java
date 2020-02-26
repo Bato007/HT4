@@ -25,7 +25,7 @@ public class ArrayListPila<E> extends AbstractPila<E> implements Pila<E> {
 	* @return el elemento eliminado de la pila
 	*/
     public E remove () {
-    	return pila.remove(0);
+    	return pila.remove(pila.size()-1);
     }
     
     /** Se encarga de mostrar el ultimo valor ingresado

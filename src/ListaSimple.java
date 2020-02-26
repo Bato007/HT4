@@ -16,7 +16,12 @@ public class ListaSimple<E> extends AbstractList<E>{
 	      head = null;
 	      count = 0;
 	   }
-	  
+	   
+
+	   /**
+		 * Se encarga de conseguir el ultimo dato ingresado a la lista
+		 * @return el ultimo dato ingresado de la lista
+		 */
 	@Override
 	public E peek() {
 		// pre: list is not empty
@@ -25,36 +30,36 @@ public class ListaSimple<E> extends AbstractList<E>{
 		      return head.value();
 		  }
 	}
+	/**
+	 * Se encarga de agregar un dato al final de la lista
+	 * @pos se agrega un nuevo elemento a la listsa
+	 * @param value dato que se agregara a la lista
+	 */
 
 	@Override
 	public void add(E value) 
-		// post: adds value to end of list
-		  {
-		      // location for new value
-		      Node<E> temp = new Node<E>(value,null);
-		      if (head != null)
-		     {
-		         // pointer to possible tail
-		         Node<E> finger = head;
-		         while (finger.next() != null)
-		         {
-		                finger = finger.next();
-		         }
-				 
-		         finger.setNext(temp);
-		      } else head = temp;
-			  
-			  count++;
-			  
-		   }
+	// post: value is added to beginning of list
+	  {
+	     // note order that things happen:
+	     // head is parameter, then assigned
+	     head = new Node<E>(value, head);
+	     count++;
+	  }
+	/**
+	 * Se encarga de eliminar y retornar el ultimo valor
+	 * @pre la lista no debe de estar vacia
+	 * @pos se elimina el ultimo elemento de la lista
+	 * @return el valor eliminado
+	 */
 
 	@Override
-	public E remove() {
-		// TODO Auto-generated method stub
-		
-		     Node<E> temp = head;
-		     head = head.next(); // move head down list
-		     count--;
-		     return temp.value();
-		  }
+	public E remove() 
+	// pre: list is not empty
+	  // post: removes and returns value from beginning of list
+	 {
+	     Node<E> temp = head;
+	     head = head.next(); // move head down list
+	     count--;
+	     return temp.value();
+	  }
 	}

@@ -30,6 +30,11 @@ public class ListaCircular<E> extends AbstractList<E>{
 	   }
 	   count++;
 	}
+	/**
+	 * Se encarga de agregar un dato al final de la lista
+	 * @pos se agrega un nuevo elemento a la listsa
+	 * @param value dato que se agregara a la lista
+	 */
 
 	@Override
 	public void add(E value) {
@@ -42,6 +47,12 @@ public class ListaCircular<E> extends AbstractList<E>{
 		
 		
 	}
+	/**
+	 * Se encarga de eliminar y retornar el ultimo valor
+	 * @pre la lista no debe de estar vacia
+	 * @pos se elimina el ultimo elemento de la lista
+	 * @return el valor eliminado
+	 */
 
 	@Override
 	public E remove() 
@@ -65,6 +76,10 @@ public class ListaCircular<E> extends AbstractList<E>{
 	   return temp.value();
 	}
 
+	/**
+	 * Se encarga de conseguir el ultimo dato ingresado a la lista
+	 * @return el ultimo dato ingresado de la lista
+	 */
 	@Override
 	public E peek() {
 		// pre: list is not empty
