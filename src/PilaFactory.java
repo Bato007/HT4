@@ -22,6 +22,13 @@ public class PilaFactory<E> {
                 return new VectorPila<E>();
             case "2":
                 return new ArrayListPila<E>();
+            case "4":
+            	return new ListaCircular <E>();
+            case "5":
+            	return new ListaDoble <E>();
+            case "6":
+            	return new ListaSimple <E>();
+            	
             default:
                 return listFactory.getFactory(instance);
         }

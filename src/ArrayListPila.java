@@ -28,6 +28,11 @@ public class ArrayListPila<E> extends AbstractPila<E> implements Pila<E> {
     	return pila.remove(pila.size()-1);
     }
     
+    /** Se encarga de mostrar el ultimo valor ingresado
+     * @pre la pila debe de tener al menos un valor
+     * @pos muestra el ultimo valor
+     * @return el ultimo valor ingresado a la pila
+     **/
     public E peek(){
 		return pila.get(pila.size() - 1);
 	}

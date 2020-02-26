@@ -16,15 +16,32 @@ public class Main {
     public static void main(String[] args){
     	PilaFactory<Integer> pilaFactory = new PilaFactory<Integer>();
     	@SuppressWarnings("resource")
+    	String tipoL;
 		Scanner teclado = new Scanner (System.in);
-    	System.out.println("Introduzca que tipo de lista desea usar (1. ArrayList, 2. Vector)");
+    	System.out.println("Introduzca que tipo de lista desea usar (1. Vector, 2. ArrayList, 3.Lista)");
     	String tipo = teclado.nextLine();
+    	if (tipo.contentEquals("3")) {
+    		System.out.println("Introduzca que tipo de lista desea utilizar: ");
+    		System.out.println("1.Lista Circular, 2.Lista Doble, 3.Lista Simple");
+    		tipoL = teclado.nextLine();
+    		if (tipoL.contentEquals("1")) {
+    			tipo = "4";
+    		}
+    		if (tipoL.contentEquals("2")) {
+    			tipo = "5";
+    		}
+    		if (tipoL.contentEquals("3")) {
+    			tipo = "6";
+    		}
+    	}
     	Pila<Integer> pila = pilaFactory.getFactory(tipo);
     	Calculadora cal = Singleton.getSingle();
     	//Solo para verificar que si se cree correctamente el tipo de pila
     	if(pila instanceof ArrayListPila){
 			System.out.println("Si es un arraylist");
-		}
+		} 
+    	 
+    	  /*
     	  File archivo = null;
 	      FileReader fr = null;
 	      BufferedReader br = null;
@@ -110,7 +127,7 @@ public class Main {
 	    	  
 	      }catch (Exception e) {
 	    	  System.out.println ("El documento posee una operacion incorrecta");
-	      }
+	      }*/
 
 
 

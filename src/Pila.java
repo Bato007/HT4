@@ -22,6 +22,11 @@ public interface Pila<E> {
      * @return el valor eliminado
      */
     public E remove();
-
+    /**
+     * Se encarga de mostrar el ultimo valor ingresado
+     * @pre la pila debe de tener al menos un valor
+     * @pos muestra el ultimo valor
+     * @return el ultimo valor ingresado a la pila
+     */
     public E peek();
 }

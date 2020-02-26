@@ -23,7 +23,7 @@ public abstract class AbstractList<E> implements Lista<E>,Pila<E>{
     public abstract void add(E value);
 
     /**
-     * Se encarga de eliminar y retornar el ultimo valor
+     * Se encarga de eliminar y retornar el ultimo valor ingresado
      * @pre la lista no debe de estar vacia
      * @pos se elimina el ultimo elemento de la lista
      * @return el valor eliminado
