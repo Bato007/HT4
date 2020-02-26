@@ -21,17 +21,17 @@ public class ArrayListPila<E> extends AbstractPila<E> implements Pila<E> {
     /**
 	* Elimina un elemento de la pila
 	* @pre hay por lo menos un elemento en la pila
-	* @post elimina el ultimo elemento de la pila
+	* @post elimina el prime elemento de la pila
 	* @return el elemento eliminado de la pila
 	*/
     public E remove () {
-    	return pila.remove(pila.size()-1);
+    	return pila.remove(0);
     }
     
     /** Se encarga de mostrar el ultimo valor ingresado
      * @pre la pila debe de tener al menos un valor
      * @pos muestra el ultimo valor
-     * @return el ultimo valor ingresado a la pila
+     * @return el ultimo valor de la pila
      **/
     public E peek(){
 		return pila.get(pila.size() - 1);
