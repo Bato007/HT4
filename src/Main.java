@@ -18,6 +18,8 @@ public class Main {
     	@SuppressWarnings("resource")
     	String tipoL;
 		Scanner teclado = new Scanner (System.in);
+		System.out.println("Introduzca el nombre del documento (datos.txt)");
+		String documento = teclado.nextLine();
     	System.out.println("Introduzca que tipo de lista desea usar (1. Vector, 2. ArrayList, 3.Lista)");
     	String tipo = teclado.nextLine();
     	if (tipo.contentEquals("3")) {
@@ -38,10 +40,22 @@ public class Main {
     	Calculadora cal = Singleton.getSingle();
     	//Solo para verificar que si se cree correctamente el tipo de pila
     	if(pila instanceof ArrayListPila){
-			System.out.println("Si es un arraylist");
+			System.out.println("Tipo de lista utilizada: Arraylist");
+		} 
+    	if(pila instanceof VectorPila){
+			System.out.println("Tipo de lista utilizada: Vector");
+		} 
+    	if(pila instanceof ListaSimple){
+			System.out.println("Tipo de lista utilizada: ListaSimple");
+		} 
+    	if(pila instanceof ListaDoble){
+			System.out.println("Tipo de lista utilizada: ListaDoble");
+		} 
+    	if(pila instanceof ListaCircular){
+			System.out.println("Tipo de lista utilizada: ListaCircular");
 		} 
     	 
-    	  /*
+    	  
     	  File archivo = null;
 	      FileReader fr = null;
 	      BufferedReader br = null;
@@ -59,7 +73,7 @@ public class Main {
 	      try {
 	         // Apertura del fichero y creacion de BufferedReader para poder
 	         // hacer una lectura comoda (disponer del metodo readLine()).
-	         archivo = new File ("datos.txt"); //Hay que crear el archivo para que sirva
+	         archivo = new File (documento); //Hay que crear el archivo para que sirva
 	         fr = new FileReader (archivo);
 	         br = new BufferedReader(fr);
 
@@ -127,7 +141,7 @@ public class Main {
 	    	  
 	      }catch (Exception e) {
 	    	  System.out.println ("El documento posee una operacion incorrecta");
-	      }*/
+	      }
 
 
 
