@@ -18,7 +18,7 @@ public class Main {
     	@SuppressWarnings("resource")
     	String tipoL;
 		Scanner teclado = new Scanner (System.in);
-		System.out.println("Introduzca el nombre del documento (datos.txt)");
+		System.out.print("Introduzca el nombre del documento (datos.txt): ");
 		String documento = teclado.nextLine();
     	System.out.println("Introduzca que tipo de lista desea usar (1. Vector, 2. ArrayList, 3.Lista)");
     	String tipo = teclado.nextLine();

@@ -12,8 +12,15 @@ public class ListaDobleTest {
         cuate.add(41);
 
         int hola = cuate.remove();
+        int hola2 = cuate.remove();
+
         System.out.println(hola);
         assertEquals(hola, 41);
+        assertEquals(hola2, 31);
+        cuate.add(12);
+
+        int hola3 = cuate.remove();
+        assertEquals(hola3, 12);
     }
 
 }
